@@ -15,7 +15,7 @@ public class RealWarehouse implements Warehouse {
     }
 
     public boolean hasInventory(String product, int quantity) {
-        return inStock(product) &gt;= quantity;
+        return inStock(product)== quantity;
     }
 
     public void remove(String product, int quantity) {
@@ -23,7 +23,7 @@ public class RealWarehouse implements Warehouse {
     }
 
     private int inStock(String product) {
-        Integer quantity = products.get(product);
+        Integer quantity = (Integer) products.get(product);
         return quantity == null ? 0 : quantity;
     }
 
